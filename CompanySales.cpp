@@ -7,6 +7,7 @@
 #include <iomanip>
 using namespace std;
 
+//These are te maximum years and colums the program can output
 const int MAXYEARS = 10;
 const int MAXCOLUMS = 5;
 
@@ -28,6 +29,8 @@ int main()
     return 0;
 }
 
+//The printTableHeading function will print the Heading of the Table 
+//which contain the title, year, and 4 quarters of sales
 void printTableHeading()
 {
     cout << setw(40) << "YEARLY QUARTERLY SALES" << endl << endl << endl;
@@ -36,6 +39,9 @@ void printTableHeading()
          << setw(10) << "Quarter 4" << endl;
 }
 
+//The getSales function will ask the user for the number of years from 1-10
+//which are the maximum rows. It also uses for loops to put the years and quarters
+//into a 2D array.
 void getSales (SalesType table, int& numberOfYears)
 {
     cout << "Please enter the number of years (1-" << MAXYEARS << ")" << endl;
@@ -50,6 +56,8 @@ void getSales (SalesType table, int& numberOfYears)
     cout << endl;
 }
 
+//The printSales function will print the sales using two for loops and 
+//outputting the input from getSales into a organized chart.
 void printSales(SalesType table, int numberOfYears)
 {
     for (int years = 0; years < numberOfYears; years++) {
